@@ -103,7 +103,7 @@ void __pixelate_uchar(Mat &frame, int x, int y, int x2, int y2, int blksz)
         int row = frame.cols * (i + r);
         for (int c = 0; c < blksz; c++)
         {
-          if ((i + r) < frame.rows && (j + c) < frame.cols)
+          if (i < frame.rows && (j + c) < frame.cols)
           {
             sum += frame_data[row + (j + c)];
             count++;
@@ -120,7 +120,7 @@ void __pixelate_uchar(Mat &frame, int x, int y, int x2, int y2, int blksz)
         int row = frame.cols * (i + r);
         for (int c = 0; c < blksz; c++)
         {
-          if ((i + r) < frame.rows && (j + c) < frame.cols)
+          if (i < frame.rows && (j + c) < frame.cols)
           {
             frame_data[row + (j + c)] = avg;
           }
