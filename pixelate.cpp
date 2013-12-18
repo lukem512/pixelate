@@ -70,6 +70,7 @@ void pixelate(Mat &frame, int x, int y, int x2, int y2, int blksz)
 
   // process accordingly
   if (type == CV_8U && chans == 1) return __pixelate_uchar(frame, x, y, x2, y2, blksz);
+  // TODO: colour/CV_32F
   
   // or print an error
   cerr << "Could not pixellate image type." << endl;
